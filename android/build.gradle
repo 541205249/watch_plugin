@@ -1,0 +1,41 @@
+group 'com.example.watch_plugin'
+version '1.0'
+
+buildscript {
+    repositories {
+//        google()
+//        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.0'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+//        google()
+//        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 31
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion 16
+    }
+}
